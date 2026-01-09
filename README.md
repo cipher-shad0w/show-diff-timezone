@@ -28,7 +28,7 @@ A lightweight macOS menu bar application that displays the current time in diffe
 ### Homebrew (Recommended)
 
 ```bash
-brew tap cipher-shad0w/homebrew-show-diff-timezone
+brew tap cipher-homebrew/show-diff-timezone
 brew install --cask show-diff-timezone
 ```
 
