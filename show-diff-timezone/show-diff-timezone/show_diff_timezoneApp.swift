@@ -18,8 +18,33 @@ extension DateFormatter {
     }()
 }
 
+class TimeViewModel: ObservableObject {
+    @Published var currentTime = Date()
+    private var timer: Timer?
+    
+    init() {
+        startTimer()
+    }
+    
+    private func startTimer() {
+        // Update immediately
+        currentTime = Date()
+        
+        // Then update every minute
+        timer = Timer.scheduledTimer(withTimeInterval: 60, repeats: true) { [weak self] _ in
+            self?.currentTime = Date()
+        }
+    }
+    
+    deinit {
+        timer?.invalidate()
+    }
+}
+
 @main
 struct show_diff_timezoneApp: App {
+    @StateObject private var timeViewModel = TimeViewModel()
+    
     private var currentTimeZone: TimeZone {
         TimeZone.current
     }
@@ -41,12 +66,12 @@ struct show_diff_timezoneApp: App {
             EmptyView()
         } label: {
             if isInEurope {
-                Text("SEA: \(DateFormatter.seattleFormatter.string(from: Date()))")
+                Text("SEA: \(DateFormatter.seattleFormatter.string(from: timeViewModel.currentTime))")
             } else if isInUSPacific {
-                Text("BER: \(DateFormatter.berlinFormatter.string(from: Date()))")
+                Text("BER: \(DateFormatter.berlinFormatter.string(from: timeViewModel.currentTime))")
             } else {
                 // Fallback: show both
-                Text("SEA: \(DateFormatter.seattleFormatter.string(from: Date())) | BER: \(DateFormatter.berlinFormatter.string(from: Date()))")
+                Text("SEA: \(DateFormatter.seattleFormatter.string(from: timeViewModel.currentTime)) | BER: \(DateFormatter.berlinFormatter.string(from: timeViewModel.currentTime))")
             }
         }
     }
