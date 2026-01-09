@@ -23,6 +23,7 @@ jobs:
           xcodebuild -project show-diff-timezone/show-diff-timezone.xcodeproj \
             -scheme show-diff-timezone \
             -configuration Release \
+            -derivedDataPath show-diff-timezone/build \
             clean build \
             CODE_SIGN_IDENTITY="" \
             CODE_SIGNING_REQUIRED=NO \
@@ -30,7 +31,7 @@ jobs:
 
       - name: Create zip
         run: |
-          cd ~/Library/Developer/Xcode/DerivedData/show-diff-timezone-*/Build/Products/Release
+          cd show-diff-timezone/build/Build/Products/Release
           zip -r show-diff-timezone.zip show-diff-timezone.app
           mv show-diff-timezone.zip $GITHUB_WORKSPACE/
 
