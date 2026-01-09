@@ -1,6 +1,6 @@
 [project]
 name = "show-diff-timezone"
-version = "0.1.5"
+version = "0.1.6"
 description = "macOS menu bar app showing time difference between Seattle and Berlin"
 license = { text = "MIT" }
 keywords = ["macos", "menubar", "timezone", "swift", "time-difference"]
