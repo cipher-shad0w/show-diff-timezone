@@ -1,0 +1,25 @@
+[project]
+name = "show-diff-timezone"
+version = "0.1.0"
+description = "macOS menu bar app showing time difference between Seattle and Berlin"
+license = { text = "MIT" }
+keywords = ["macos", "menubar", "timezone", "swift", "time-difference"]
+authors = [
+    { name = "cipher-shad0w" }
+]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: End Users/Desktop",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: MacOS",
+    "Topic :: Utilities",
+]
+
+[project.urls]
+Homepage = "https://github.com/cipher-shad0w/show-diff-timezone"
+Repository = "https://github.com/cipher-shad0w/show-diff-timezone"
+Issues = "https://github.com/cipher-shad0w/show-diff-timezone/issues"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
