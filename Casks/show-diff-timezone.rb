@@ -1,6 +1,6 @@
 cask "show-diff-timezone" do
   version "0.1.0"
-  sha256 ""
+  sha256 "d5d28aab9435cf8a73f709e2bad9853424ed645b65874b0e2a0584c56cb3745a"
 
   url "https://github.com/cipher-shad0w/show-diff-timezone/releases/download/v#{version}/show-diff-timezone.zip"
   name "Show Diff Timezone"

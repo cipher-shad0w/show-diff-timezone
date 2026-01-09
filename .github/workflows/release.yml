@@ -50,7 +50,7 @@ jobs:
       - name: Checkout tap repository
         uses: actions/checkout@v4
         with:
-          repository: cipher-shad0w/homebrew-show-diff-timezone
+          repository: cipher-homebrew/homebrew-show-diff-timezone
           token: ${{ secrets.TAP_GITHUB_TOKEN }}
           path: tap
 
